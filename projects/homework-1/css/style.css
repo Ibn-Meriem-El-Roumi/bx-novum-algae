@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    /* Suggested Palette */
+    /* You still can create or choose your own colors */
+    --mustard: hsla(44, 96%, 69%, 1);
+    --periwinkle: hsla(232, 92%, 86%, 1);
+    --emerald: hsla(139, 50%, 64%, 1);
+    --shadow-grey: hsla(240, 9%, 10%, 1);
+    --white: hsla(0, 0%, 100%, 1);
+    --sweet-salmon: hsla(8, 100%, 77%, 1);
+
+    --fontFamily: "Arvo", serif;
+}
