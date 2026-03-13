@@ -19,4 +19,80 @@ body{
     width: 8rem;
     border-radius: 100%;
     background-color: rgb(13, 135, 0);
+    position: absolute;
+
+    animation: bounce 3s 0s infinite alternate ease-in;
+
+    /* transition: background-color 0.5s ease-in;
+    transition: border-radius 0.5s ease-in;
+    transition: box-shadow 2s ease-in; */
+}
+
+#title{
+    position: absolute;
+}
+
+#title::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    z-index: -1;
+
+    animation: highlight 2s 0s 3 forwards ease-in;
+}
+/* 
+.ball:hover{
+    background-color: rgb(255, 76, 76);
+    border-radius: 0;
+
+    box-shadow: 0.9rem 0.9rem rgb(117, 13, 13);
+} */
+
+/* @keyframes moveX {
+    from{
+        left: 0;
+    }
+
+    to{
+        left: 100%;
+    }
+
+} */
+
+@keyframes highlight {
+    0%{
+        width: 0;
+    }
+
+    50%{
+        background-color: aqua;
+    }
+
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes bounce {
+    0%{
+        bottom: 0;
+    }
+
+    10%{
+        background-color: red;
+    }
+
+    50%{
+        height: 10rem;
+        width: 10rem;
+
+        background-color: blue;
+    }
+
+    100%{
+        bottom: 100%;
+    }
+    
 }
