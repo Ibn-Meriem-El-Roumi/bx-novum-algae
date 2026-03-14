@@ -111,8 +111,25 @@ var students = [oussama, soumeya, racim]
 
 
 
+var meal = {
+    name: "Pizza",
+    prepTime: "10min",
+    ingredients: ["Tomatoes", "Cheese", "Dough"]
+}
 
+function showMealInfo(meal){
+    console.log("Name: "+ meal.name+ " Preparation takes: "+meal.prepTime);
+}
 
+showMealInfo(meal)
+
+var meals = [
+    meal,meal,meal
+]
+
+for(let i= 0; i < meals.length; i++){
+    showMealInfo(meals[i])
+}
 
 
 
