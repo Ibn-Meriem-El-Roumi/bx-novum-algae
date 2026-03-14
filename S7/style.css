@@ -17,11 +17,13 @@ body{
 .ball{
     height: 8rem;
     width: 8rem;
-    border-radius: 100%;
+    /* border-radius: 100%; */
     background-color: rgb(13, 135, 0);
     position: absolute;
 
-    animation: bounce 3s 0s infinite alternate ease-in;
+    /* animation: bounce 3s 0s infinite alternate ease-in; */
+    animation: bounce 2s infinite,
+                rotate 2s infinite;
 
     /* transition: background-color 0.5s ease-in;
     transition: border-radius 0.5s ease-in;
@@ -39,8 +41,10 @@ body{
     width: 100%;
     background-color: red;
     z-index: -1;
-
-    animation: highlight 2s 0s 3 forwards ease-in;
+    /* animation-delay: 0s, 1s;
+    animation-duration: 2s, 1s;
+    animation-name: bounce, rotate; */
+    /* animation: bounce 2s infinite, rotate 2s infinite; */
 }
 /* 
 .ball:hover{
@@ -80,19 +84,32 @@ body{
         bottom: 0;
     }
 
-    10%{
-        background-color: red;
-    }
 
-    50%{
-        height: 10rem;
-        width: 10rem;
-
-        background-color: blue;
+    49%{
+        transform: scale(2);
     }
 
     100%{
-        bottom: 100%;
+        bottom: 90%;
+        width: 2rem;
+        height: 2rem;
     }
-    
+}
+
+@keyframes rotate {
+    1%{
+        transform: rotate(0deg);
+    }
+
+    50%{
+        transform: rotate(90deg);
+    }
+
+    75%{
+        transform: rotate(200deg);
+    }
+
+    99%{
+        transform: rotate(360deg);
+    }
 }
