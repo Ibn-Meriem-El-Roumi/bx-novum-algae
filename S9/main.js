@@ -29,7 +29,13 @@ console.log(USERS);
 
 sumbitBtn.addEventListener("click", function(e){
     e.preventDefault()
+    
+    console.log(USERS);
+    
+})  
 
+document.addEventListener("keydown", function(e){
+    
     const newUser = {
         fullname: fullName.value,
         dateOfBirth: dateOfBirth.value,
@@ -38,8 +44,19 @@ sumbitBtn.addEventListener("click", function(e){
         password: password.value
     }
 
-    USERS.push(newUser)
+    if(e.key === "Enter"){
+        addNewUser(newUser)
+    }
+
     console.log(USERS);
     
-})  
+})
 
+// document.addEventListener("keyup", function(e){
+//     console.log(e.key);
+    
+// })
+
+function addNewUser(newUser){
+    USERS.push(newUser)
+}

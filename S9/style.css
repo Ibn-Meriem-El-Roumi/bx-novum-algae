@@ -1,0 +1,23 @@
+*{
+    padding: 0rem;
+    margin: 0rem;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#key{
+    background-color: #353333;
+    color: #faff5e;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    corner-shape: scoop;
+}
