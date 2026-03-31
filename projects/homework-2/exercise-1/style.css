@@ -1,0 +1,44 @@
+*{
+    padding: 0rem;
+    margin: 0rem;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    form{
+        width: 100%;
+
+        padding: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .field{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        input, textarea{
+            width: 100%;
+        }
+    }
+}
+
+/* 
+    * palette 1 url: https://coolors.co/palette/6f1d1b-bb9457-432818-99582a-ffe6a7
+    * palette 2 url: https://coolors.co/palette/335c67-fff3b0-e09f3e-9e2a2b-540b0e
+
+    * pick your own: https://coolors.co/palettes/trending
+*/
