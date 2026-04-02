@@ -1,0 +1,150 @@
+:root {
+  /* Wood Brown Shades */
+  --wood-brown-light: hsl(30, 30%, 70%);
+  --wood-brown-medium: hsl(30, 40%, 50%);
+  --wood-brown-dark: hsl(30, 50%, 30%);
+  --wood-brown-deep: hsl(30, 60%, 20%);
+
+  /* Orange Shades */
+  --orange-light: hsl(35, 80%, 80%);
+  --orange-medium: hsl(35, 90%, 60%);
+  --orange-dark: hsl(35, 100%, 40%);
+  --orange-burnt: hsl(25, 100%, 30%);
+
+  /* Yellow Shades */
+  --yellow-light: hsl(55, 80%, 90%);
+  --yellow-medium: hsl(55, 100%, 70%);
+  --yellow-dark: hsl(55, 100%, 50%);
+  --yellow-mustard: hsl(45, 100%, 60%);
+
+  /* Dark Colors */
+  --dark-black: hsl(0, 0%, 0%);
+  --dark-gray: hsl(0, 0%, 20%);
+  --dark-brown: hsl(30, 50%, 10%);
+  --dark-slate: hsl(210, 10%, 15%);
+  --dark-charcoal: hsl(0, 0%, 10%);
+
+  /* Light Colors */
+  --light-white: hsl(0, 0%, 100%);
+  --light-cream: hsl(50, 20%, 95%);
+  --light-beige: hsl(40, 15%, 90%);
+  --light-gray: hsl(0, 0%, 90%);
+  --light-pastel-orange: hsl(35, 50%, 85%);
+  --light-pastel-yellow: hsl(55, 60%, 85%);
+  --light-wood: hsl(30, 20%, 80%);
+}
+
+/* Font Daces */
+@font-face {
+    font-family: "Avro";
+    src: url(../fonts/Arvo/Arvo-Regular.ttf);
+}
+
+*{
+  padding: 0rem;
+  margin: 0rem;
+  box-sizing: border-box;
+
+  font-family: "Avro";
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: var(--dark-charcoal);
+  color: var(--light-beige);
+
+  img{
+    max-width: 100%;
+  }
+}
+
+
+main{
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  form{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .field{
+      width: 75%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      input, textarea, select, option{
+        width: 100%;
+        padding: 0.5rem;
+      }
+    }
+
+    button{
+      padding: 0.4rem 0.6rem;
+      background-color: var(--yellow-medium);
+      border: 1px solid var(--yellow-medium);
+    }
+  }
+
+  #content{
+    width: 100%;
+    display: inherit;
+    flex-direction: inherit;
+    align-items: center;
+    gap: 1rem;
+    #cookie-container{
+      width: 90%;
+      
+      .cookie{
+        width: 100%;
+        
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+
+        background-color: var(--wood-brown-dark);
+        
+        padding: .2rem;
+        
+        .image{
+          grid-column: 1;
+          display: flex;
+          align-items: center;
+          width: 10rem;
+          height: auto;
+          align-self: center;
+        }
+        .details {
+          grid-column: 2 / 4;
+
+          list-style: none;
+          
+          & > *{
+            margin: 0.5rem 0rem;
+            
+          }
+        }
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover{
+          transform: scale(1.03);
+          box-shadow: 5px 5px var(--wood-brown-medium);
+        }
+      }
+    }
+  }
+}
