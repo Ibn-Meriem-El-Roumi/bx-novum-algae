@@ -32,6 +32,10 @@
   --light-pastel-orange: hsl(35, 50%, 85%);
   --light-pastel-yellow: hsl(55, 60%, 85%);
   --light-wood: hsl(30, 20%, 80%);
+
+  --red-alert-dark: hsl(0, 93%, 24%);
+  --red-alert-medium: hsl(0, 94%, 43%);
+  --red-alert-light: hsl(0, 100%, 76%);
 }
 
 /* Font Daces */
@@ -64,6 +68,32 @@ body{
   img{
     max-width: 100%;
   }
+  
+  button{
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  }
+
+  button.bg-yellow{
+    background-color: var(--yellow-medium);
+    border: 1px solid var(--yellow-medium);
+    &:hover{
+      background-color: var(--yellow-mustard);
+      border: 1px solid var(--yellow-mustard);
+    }
+  }
+  button.bg-delete{
+    background-color: var(--red-alert-medium);
+    border: 1px solid var(--red-alert-medium);
+    color: var(--light-white);
+    &:hover{
+      background-color: var(--red-alert-dark);
+      border: 1px solid var(--red-alert-dark);
+    }
+  }  
 }
 
 
@@ -94,11 +124,6 @@ main{
       }
     }
 
-    button{
-      padding: 0.4rem 0.6rem;
-      background-color: var(--yellow-medium);
-      border: 1px solid var(--yellow-medium);
-    }
   }
 
   #content{
@@ -120,7 +145,7 @@ main{
         background-color: var(--wood-brown-dark);
         
         padding: .2rem;
-        
+        margin: 1rem 0rem;  
         .image{
           grid-column: 1;
           display: flex;
