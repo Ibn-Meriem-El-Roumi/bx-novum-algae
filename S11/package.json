@@ -1,0 +1,20 @@
+{
+  "name": "S11",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "iphone-charger": "echo \"Hakuna Matata\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.32.1",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "mongoose": "^9.4.1"
+  }
+}

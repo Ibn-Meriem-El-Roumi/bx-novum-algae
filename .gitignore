@@ -1,2 +1,4 @@
 *.avif
 gateauxquet
+*.notes.md
+S10/*.js
