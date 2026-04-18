@@ -1,19 +1,23 @@
-import http from "http"
-import fs from "fs"
+import express, { json, urlencoded } from "express"
+// import { createStudent, deleteStudent, getAllStudents, getOneStudentById, updateStudent } from "./handlers.js"
 
-const server = http.createServer((req, res) => {
-  // Read the HTML file
-  fs.readFile('index.html', (err, data) => {
-    if (err) {
-      res.writeHead(500, { 'Content-Type': 'text/plain' });
-      return res.end('Error loading HTML');
-    }
-    // Success: Serve the HTML content
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end(data);
-  });
-});
+import dotenv from "dotenv"
+import { createTea, deleteTea, getAllTeas, getTeaById, updateTea } from "./teaHandler.js"
+dotenv.config()
 
-server.listen(3000, () => {
-  console.log('Server running at http://localhost:3000/');
-});
+const PORT = process.env.PORT || 8080
+const server = express()
+
+server.use(urlencoded({extended: true}))
+server.use(json())
+
+server.get("/tea/", getAllTeas)
+server.get("/tea/:id", getTeaById)
+server.post("/tea/", createTea)
+server.delete("/tea/:id", deleteTea)
+server.put("/tea/:id", updateTea)
+
+server.listen(PORT, () => {
+  console.log(`Listening to http://localhost:${PORT}`);
+  
+})
