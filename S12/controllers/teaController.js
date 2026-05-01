@@ -1,11 +1,15 @@
-// create a tea
-function createTea(req, res){
-    console.log(`Tea ${req.body.id} has been added`);
-    const newTea= {
-        id: new Date(), ...req.body
+import Tea from "../models/Tea.js";
 
+// create a tea
+async function createTea(req, res){
+    try{
+        const newTea = new Tea(req.body)
+        const savedTea = await newTea.save()
+        if(!savedTea) return res.status(500).json({message: "Ops"})
+        res.status(201).json(savedTea)
+    }catch(err){
+        console.error(err);
     }
-    res.send(newTea)
 }
 // get a tea by id
 function getTeaById(req, res){
