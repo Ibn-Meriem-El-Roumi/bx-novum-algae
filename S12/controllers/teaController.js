@@ -49,7 +49,7 @@ async function updateTeaPrice(req, res){
     try {
         const {price} = req.body
         if(price) {
-            const updatedtea = await Tea.findOneAndUpdate({_id: req.params.id}, {price})
+            const updatedtea = await Tea.findOneAndUpdate({_id: req.params.id}, {price: price})
             if(!updatedtea) return res.status(404).json({message: "No Tea is available"})
             return res.status(200).json({message: "Tea updated", updateTea})
 

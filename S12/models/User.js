@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import bcrypt from "bcrypt"
 
 const userSchema = new Schema({
     firstname: {
@@ -19,7 +20,8 @@ const userSchema = new Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,
@@ -28,6 +30,8 @@ const userSchema = new Schema({
 }, {
     timestamps: true
 })
+
+
 
 const User = model("User", userSchema)
 export default User

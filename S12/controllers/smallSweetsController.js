@@ -8,6 +8,16 @@ async function getAllSmallSweets(request, response) {
     return response.status(200).json({message: "Sweets found", sweets: allSmallSweets})
 }
 
+async function createOneSmallSweet(req, res) {
+  try{
+    console.log(req.body.price);
+    res.status(200).json({price: req.body.price})
+  }catch(err) {
+    console.error(err);
+  } 
+}
+
 export {
-    getAllSmallSweets
+    getAllSmallSweets,
+    createOneSmallSweet
 }
