@@ -7,6 +7,7 @@ import teaRouter from "./routers/teaRouter.js"
 import { connectDB } from "./config/DBConnect.js"
 import sweetsRouter from "./routers/sSweetsRouter.js"
 import userRouter from "./routers/userRouter.js"
+import { requireAuth } from "./middlewares/authMiddleware.js"
 
 dotenv.config()
 
@@ -22,10 +23,6 @@ server.set('view engine', 'ejs');
 server.use(express.static('public'))
 
 
-server.get("/create-cookie", (req, res) => {
-  res.cookie("newcookie", "Here is an example")
-})
-
 server.get("/", (req, res) => {
   res.render("index", {user: {username: "chouchane", email: "chouchane@gmail.com", tea: "Tea b ne3na3"}})
 })
@@ -34,6 +31,12 @@ server.get("/about", (req, res) => {
 })
 server.get("/signup", (req, res) => {
   res.render("pages/signup")
+})
+server.get("/login", (req, res) => {
+  res.render("pages/signin")
+})
+server.get("/profile", requireAuth, (req, res) => {
+  res.render("pages/profile")
 })
 
 
