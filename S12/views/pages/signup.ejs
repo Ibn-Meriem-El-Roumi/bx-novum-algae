@@ -1,0 +1,79 @@
+<%- include("../parts/header") %>
+
+<form method="post">
+    <section class="form-field">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" required>
+    </section>
+
+    <section class="form-field">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" required>
+    </section>
+
+    <section class="form-field">
+        <label for="dateOfBirth">Date of Birth</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+    </section>
+
+    <section class="form-field">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+    </section>
+
+    <section class="form-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    </section>
+
+    <section class="form-field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+    </section>
+
+    <button type="submit" id="submit">Sign Up</button>
+</form>
+
+<script>
+    const firstname = document.querySelector("#firstname")
+    const lastname = document.querySelector("#lastname")
+    const dateOfBirth = document.querySelector("#dateOfBirth")
+    const phoneNumber = document.querySelector("#phoneNumber")
+    const email = document.querySelector("#email")
+    const password = document.querySelector("#password")
+
+    const submit = document.querySelector("#submit")
+
+    async function signUp(){
+        const newUser = {
+            firstname: firstname.value,
+            lastname: lastname.value,
+            dateOfBirth: dateOfBirth.value,
+            phoneNumber: phoneNumber.value,
+            email: email.value,
+            password: password.value,
+        }
+
+        console.log(newUser)
+
+        try{
+            const res = await fetch("/users/create", {
+                method: "POST", 
+                body: JSON.stringify(newUser),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+        }catch(err){
+            console.error(err)
+        }
+    }
+
+    submit.addEventListener("click", async (e) => {
+        e.preventDefault()
+        await signUp()
+    })
+
+</script>
+
+<%- include("../parts/footer") %>
